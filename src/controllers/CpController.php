@@ -250,7 +250,7 @@ class CpController extends Controller
 
         return $this->asSuccess(data: [
             'redirect' => UrlHelper::urlWithParams($element->getCpEditUrl(), [
-                'fresh' => 1,
+                'fresh' => 0,
             ]),
         ]);
     }
