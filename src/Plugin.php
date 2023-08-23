@@ -161,12 +161,7 @@ class Plugin extends BasePlugin
                     return;
                 }
 
-                $hasNoContent = Collection::make($element->getFieldLayout()->getCustomFields())
-                    ->filter(fn($field) => !$element->isFieldEmpty($field->handle))
-                    ->isEmpty();
-
-                // If it already has content, we don't want to overwrite it
-                if (!$hasNoContent) {
+                if (!$element->isFresh) {
                     return;
                 }
 
